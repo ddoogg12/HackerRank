@@ -1,0 +1,36 @@
+# Practice => Interview Preparation Kits1 => Week Preparation Kit =>Day 1 => Plus Minus
+# 문제
+# arr 의 양수 , 음수, 0의 갯수 비율을 소수정 6번째짜리까지 출력
+
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'plusMinus' function below.
+#
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+def plusMinus(arr):
+    # Write your code here
+    total_line = len(arr)
+    positive_rate = "{0:.6f}".format(sum(1 for i in arr if i > 0) / total_line)
+    negative_rate = "{0:.6f}".format(sum(1 for i in arr if i < 0) / total_line)
+    zero_rate     = "{0:.6f}".format(sum(1 for i in arr if i == 0) / total_line)
+    
+    return "\n".join([positive_rate, negative_rate, zero_rate])
+    
+    
+
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    print(plusMinus(arr))
