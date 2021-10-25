@@ -1,0 +1,8 @@
+if __name__ == '__main__':
+    python_students = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        python_students.append([name, score])
+    lowest_second = sorted(set([score for name, score in python_students]))[1]
+    print('\n'.join(sorted([name for name, score in python_students if score == lowest_second])))
